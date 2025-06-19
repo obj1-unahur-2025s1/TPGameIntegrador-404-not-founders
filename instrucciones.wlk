@@ -12,7 +12,7 @@ object instrucciones {
     var property position = game.at(0, 0)
 
     // Imagen que se va a usar como fondo de instrucciones
-    method image() = "instrucciones.png"   // Este archivo debe estar en la carpeta assets del proyecto
+    method image() = "instrucciones2.png"   // Este archivo debe estar en la carpeta assets del proyecto
 
     // Este método agrega la imagen al juego y configura la tecla para continuar
     method mostrar() {
@@ -34,8 +34,10 @@ object configInstrucciones {
 
     // Este método asocia la tecla "C" con la acción de cerrar las instrucciones
     method habilitarTeclaParaCerrar() {
-        keyboard.c().onPressDo({               // Cuando el jugador presiona la tecla "C"...
+        keyboard.enter().onPressDo({               // Cuando el jugador presiona la tecla "C"...
             instrucciones.cerrar()             // ...se ejecuta el método cerrar del objeto instrucciones
         })
     }
 }
+
+

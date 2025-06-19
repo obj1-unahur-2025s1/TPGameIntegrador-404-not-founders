@@ -1,13 +1,16 @@
 import wollok.game.*
 
-// Clase que representa a un enemigo de tipo DEA
-class DEA {
-
-    // Cada objeto DEA tiene una posición en el tablero (como todos los visuales)
+class Elemento {
     var property position
 
+    method image()
+}
+// Clase que representa a un enemigo de tipo DEA
+class DEA inherits Elemento{
+
+    // Cada objeto DEA tiene una posición en el tablero (como todos los visuales)
     // Imagen que representa visualmente a una DEA
-    method image() = "dea.png"
+    override method image() = "dea.png"
 
     // Este método hace que la DEA se mueva en una dirección aleatoria segura
     method moverAleatorio() {
@@ -46,4 +49,13 @@ class DEA {
         className() revisa si alguno es una DEA. Y se asegura de que no esté chequeando a 
         sí misma con o != self. Si encuentra otra DEA, no se mueve a esa celda */
     }
+}
+
+class Ingrediente inherits Elemento{
+// cada ingrediente tiene una posición en el tablero
+    override method image() = "ingrediente.png"
+}
+
+class Contenedor inherits Elemento{
+    override method image() = "laboratory.png"
 }
