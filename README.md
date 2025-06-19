@@ -2,10 +2,13 @@
 
 ## Equipo de desarrollo
 
-Diaz Nehemias
-Ferrin Nicolas
-Garcia Angel
-Villalba Milagros
+- Diaz Nehemias
+
+- Ferrin Nicolas
+
+- Garcia Angel
+
+- Villalba Milagros
 
 ## Capturas
 
@@ -19,6 +22,6 @@ Walter es un ex profesor de química, quién, frustrado por haber contraído cá
 
 ## Otros
 
-- Curso/Facultad
-- Versión de wollok
-- Una vez terminado, no tenemos problemas en que el repositorio sea público / queremos manternerlo privado
+- Universidad Nacional de Hurlingham, Programación con Objetos 1, Primer cuatrimestre 2025, comisión 4
+- Versión de wollok 0.3.1
+- Una vez terminado, no tenemos problemas en que el repositorio sea público
