@@ -12,7 +12,7 @@ object instrucciones {
     var property position = game.at(0, 0)
 
     // Imagen que se va a usar como fondo de instrucciones
-    method image() = "instrucciones2.png"   // Este archivo debe estar en la carpeta assets del proyecto
+    method image() = "instruccionInicio.png"   // Este archivo debe estar en la carpeta assets del proyecto
 
     // Este método agrega la imagen al juego y configura la tecla para continuar
     method mostrar() {

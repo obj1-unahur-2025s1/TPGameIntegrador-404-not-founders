@@ -41,7 +41,7 @@ object reloj {
         // Si llegó a 0, se detiene y se llama al método perder del nivel2
         if (segundos == 0) {
             self.detener()                             // Detiene el reloj
-            nivel2.perder("¡Se acabó el tiempo!")      // Llama a perder con mensaje personalizado
+            nivel2.perder()      // Llama a perder con mensaje personalizado
         }
     }
 }

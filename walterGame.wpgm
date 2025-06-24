@@ -5,3 +5,4 @@ import juego.*
 program JuegoWalter {
     juego.iniciar()
 }
+                 

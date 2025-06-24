@@ -6,7 +6,7 @@ object pantalla {
   const presentacion = new Fondo(img = "PrWalter.png")
   const victoria = new Fondo(img = "ganador.png")
   const derrota = new Fondo(img = "perder3.png")
-  const instruccion = new Fondo (img= "instrucciones2.png")
+  const instruccion = new Fondo (img= "instruccionInicio.png")
   
   // Limpia todo el tablero y coloca fondo neutro
   method limpiarPantalla() {
