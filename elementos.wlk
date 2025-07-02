@@ -27,8 +27,7 @@ class DEA inherits Elemento{
         // Que estén dentro del tablero Y que no haya otra DEA en esa posición
         const posicionesValidas = posibles.filter({ pos =>
             pos.x() >= 0 and pos.x() < game.width() and     // Dentro del ancho del tablero
-            pos.y() >= 0 and pos.y() < game.height() and    // Dentro del alto del tablero
-            !self.hayOtraDEAEn(pos)                         // No hay otra DEA en esa celda
+            pos.y() >= 0 and pos.y() < game.height()         // Dentro del alto del tablero                       
         })
 
         // Si hay al menos una posición válida, elige una al azar y se mueve
@@ -37,17 +36,6 @@ class DEA inherits Elemento{
             //(que estén dentro del tablero y sin otra DEA), y si hay alguna libre, 
             //se mueve a una de ellas al azar con .anyOne()
         }
-    }
-
-    // Método auxiliar que verifica si ya hay otra DEA en una posición dada
-    method hayOtraDEAEn(posicion) {
-        const objetos = game.getObjectsIn(posicion)             // Trae todos los objetos en esa celda
-        return objetos.any({ o => o != self and o.className() == "DEA" })  
-        // Devuelve true si hay otra DEA (distinta de esta misma) en la posición
-        /*Este método busca si ya hay otra DEA en una posición. 
-        Usa game.getObjectsIn(posicion) para ver qué objetos hay ahí. Luego con 
-        className() revisa si alguno es una DEA. Y se asegura de que no esté chequeando a 
-        sí misma con o != self. Si encuentra otra DEA, no se mueve a esa celda */
     }
 }
 

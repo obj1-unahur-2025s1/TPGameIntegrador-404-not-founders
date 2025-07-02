@@ -1,8 +1,6 @@
 // archivo: walterGame.wpgm
-
 import juego.*
 
 program JuegoWalter {
-    juego.iniciar()
+  juego.iniciar()
 }
-                 
