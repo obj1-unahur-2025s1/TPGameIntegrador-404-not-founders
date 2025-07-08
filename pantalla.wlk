@@ -6,7 +6,7 @@ object pantalla {
   const presentacion = new Fondo(img = "PrWalter.png")
   const victoria = new Fondo(img = "ganador.png")
   const derrota = new Fondo(img = "perder3.png")
-  const instruccion = new Fondo (img= "instruccionInicio.png")
+  const instruccion = new Fondo(img = "instruccionInicio.png")
   
   // Limpia todo el tablero y coloca fondo neutro
   method limpiarPantalla() {
@@ -31,6 +31,7 @@ object pantalla {
   
   // Pantalla de derrota
   method mostrarGameOver() {
+    game.clear()
     game.addVisual(derrota)
   }
 } // Clase visual básica para mostrar una imagen en el tablero

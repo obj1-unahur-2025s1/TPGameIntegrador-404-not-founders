@@ -40,8 +40,8 @@ object nivel2 {
 
     // Método que inicia el Nivel 2
     method iniciarNivel() {
-        juego.estado("nivel2")                 // Cambiamos el estado global del juego
-        game.clear()                           // Limpiamos el tablero de lo anterior
+        juego.estado(estadoNivel2)                 // Cambiamos el estado global del juego
+        game.clear() // Limpiamos el tablero de lo anterior
 
         // Posicionamos a Walter en el origen y vaciamos su mochila
         walter.position(game.at(0,0))
@@ -92,7 +92,7 @@ object nivel2 {
 
         game.schedule(1500, {                    // Esperamos 1.5 segundos y mostramos la pantalla final
             game.clear()
-            juego.cambiarEstado("perdiste")      // Cambiamos el estado global a "perdiste"
+            juego.cambiarEstado(estadoPerdiste)      // Cambiamos el estado global al objeto de estadoPerdiste
             pantalla.mostrarGameOver()           // Mostramos imagen de derrota
             walter.resetearRecoleccion(self) 
             configReinicio.habilitarTeclaParaCerrar()          // al hacer "ENTER" se reinicia el juego
@@ -106,20 +106,11 @@ object nivel2 {
         game.say(walter, "¡Te gusta la química eh!")            // Mostramos mensaje de victoria
 
         game.schedule(1500, {
-            game.clear()
-            juego.estado("ganaste")              // Cambiamos el estado global a "ganaste"
-            pantalla.mostrarVictoria()             // Mostramos pantalla de victoria
+            game.clear()  
+            juego.cambiarEstado(estadoGanaste)           // Correccion cambiando el estado a objeto y que active pantalla de victoria
             walter.resetearRecoleccion(self) 
             configReinicio.habilitarTeclaParaCerrar()          // al hacer "ENTER" se reinicia el juego
         })
     }
 
-    // Método que se llama cuando el cronómetro llega a 0
-    // Si todavía estamos en el nivel 2 → perdemos por tiempo
-    method seAcaboElTiempo() {
-        if (juego.estado() == "nivel2") {
-            self.perder()
-            walter.resetearRecoleccion(self) 
-        }
-    }
 }

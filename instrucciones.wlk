@@ -17,27 +17,28 @@ object instrucciones {
     // Este método agrega la imagen al juego y configura la tecla para continuar
     method mostrar() {
         game.addVisual(self)                           // Muestra la imagen en pantalla
-        configInstrucciones.habilitarTeclaParaCerrar() // Activa que la tecla "C" cierre la pantalla
+        // configInstrucciones.habilitarTeclaParaCerrar() // Activa que la tecla "C" cierre la pantalla
     }
 
     // Este método se llama cuando se presiona "C"
     // Limpia el tablero, cambia el estado a "nivel1", e inicia el primer nivel del juego
     method cerrar() {
         game.clear()               // Borra todo lo que estaba en pantalla
-        juego.estado("nivel1")     // Cambia el estado del juego a "nivel1"
-        nivel1.iniciarNivel()      // Llama al método que arranca el primer nivel
+        // juego.estado(estadoNivel1)     // Cambia el estado del juego a "nivel1"
+        // nivel1.iniciarNivel()      // Llama al método que arranca el primer nivel // estos 2 se van
+        juego.cambiarEstado(estadoNivel1)
     }
 }
 
 // Este objeto configura el comportamiento del teclado para las instrucciones
-object configInstrucciones {
+// object configInstrucciones {
 
-    // Este método asocia la tecla "C" con la acción de cerrar las instrucciones
-    method habilitarTeclaParaCerrar() {
-        keyboard.enter().onPressDo({               // Cuando el jugador presiona la tecla "C"...
-            instrucciones.cerrar()             // ...se ejecuta el método cerrar del objeto instrucciones
-        })
-    }
-}
+//     // Este método asocia la tecla "C" con la acción de cerrar las instrucciones
+//     method habilitarTeclaParaCerrar() {
+//         keyboard.enter().onPressDo({               // Cuando el jugador presiona la tecla "C"...
+//             instrucciones.cerrar()             // ...se ejecuta el método cerrar del objeto instrucciones
+//         })
+//     }
+// } // para borrar
 
 

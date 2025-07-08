@@ -45,7 +45,7 @@ object nivel1 {
         game.say(game, "Entrando al Nivel 1")
 
         // Cambiamos el estado global del juego
-        juego.estado("nivel1")
+        juego.estado(estadoNivel1)
 
         // Limpiamos el tablero y ponemos el fondo del nivel 1
         game.clear()
@@ -94,7 +94,7 @@ object nivel1 {
         game.schedule(500, {                    // Esperamos 1.5 segundos y mostramos la pantalla final
             game.clear()
             game.boardGround("fondoNegro.png")
-            juego.cambiarEstado("perdiste")      // Cambiamos el estado global a "perdiste"
+            juego.cambiarEstado(estadoPerdiste)      // Cambiamos el estado global al objeto estadoPerdiste
             pantalla.mostrarGameOver()           // Mostramos imagen de derrota
             configReinicio.habilitarTeclaParaCerrar()
         })
