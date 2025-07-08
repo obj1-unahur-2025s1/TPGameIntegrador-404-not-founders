@@ -1,9 +1,13 @@
 import wollok.game.*
+import walter.*
+import nivel1.*
+import juego.*
 
 class Elemento {
     var property position
 
     method image()
+    method alColisionarConWalter()
 }
 // Clase que representa a un enemigo de tipo DEA
 class DEA inherits Elemento{
@@ -11,6 +15,9 @@ class DEA inherits Elemento{
     // Cada objeto DEA tiene una posición en el tablero (como todos los visuales)
     // Imagen que representa visualmente a una DEA
     override method image() = "dea.png"
+    override method alColisionarConWalter() {
+        juego.estado().colisionConEnemigo()
+    }
 
     // Este método hace que la DEA se mueva en una dirección aleatoria segura
     method moverAleatorio() {
@@ -42,8 +49,19 @@ class DEA inherits Elemento{
 class Ingrediente inherits Elemento{
 // cada ingrediente tiene una posición en el tablero
     override method image() = "ingrediente.png"
+    override method alColisionarConWalter() {
+        walter.recolectar(self)
+        game.removeVisual(self)
+        nivel1.removerIngrediente(self)  // Esto lo vamos a definir
+    }
 }
 
-class Contenedor inherits Elemento{
+class Contenedor inherits Elemento {
     override method image() = "laboratory.png"
+
+    override method alColisionarConWalter() {
+        // Este comportamiento depende del nivel, así que por ahora puede no hacer nada
+        // porque en nivel1 y nivel2 ya se maneja esa colisión por separado
+    }
 }
+

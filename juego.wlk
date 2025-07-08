@@ -102,6 +102,9 @@ object estadoNivel1 inherits EstadoDeJuego {
     override method activar() {
         nivel1.iniciarNivel()
     }
+    method colisionConEnemigo() {
+    nivel1.perder()
+}
 }
 
 object estadoNivel2 inherits EstadoDeJuego {
@@ -110,6 +113,9 @@ object estadoNivel2 inherits EstadoDeJuego {
     pantalla.limpiarPantalla()
     nivel2.iniciarNivel()
   }
+  method colisionConEnemigo() {
+    nivel2.perder()
+}
 }
 
 object estadoPerdiste inherits EstadoDeJuego {

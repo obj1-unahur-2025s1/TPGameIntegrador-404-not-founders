@@ -66,15 +66,9 @@ object nivel1 {
         // Colisiones entre Walter e ingredientes
         // Si Walter toca un ingrediente, lo recoge y desaparece del tablero
         game.whenCollideDo(walter, { otro =>
-            if (ingredientes.contains(otro)) {
-                walter.recolectar(otro)      // Se guarda el ingrediente en la mochila
-                game.removeVisual(otro)      // Se lo remueve visualmente del tablero
-                ingredientes.remove(otro)    // Se lo elimina de la lista interna
-            }
-            else if (enemigos.contains(otro)) {
-                self.perder() // Si toca un DEA → pierde el juego
-
-            }
+            
+                otro.alColisionarConWalter()
+            
         })
 
         // Colisión con el contenedor
@@ -88,6 +82,10 @@ object nivel1 {
                 })
             }
         })
+    }
+
+    method removerIngrediente(i) {
+        ingredientes.remove(i)
     }
 
     method perder() {
